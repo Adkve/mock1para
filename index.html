@@ -8,19 +8,19 @@
   <style>
     /* General Body and Container Styling */
     body { 
-      font-family: 'Inter', sans-serif; /* Inter font ka upyog */
-      max-width: 900px; /* Behtar layout ke liye thoda chouda */
+      font-family: 'Inter', sans-serif; /* Using Inter font */
+      max-width: 900px; /* Slightly wider for better layout */
       margin: auto; 
       padding: 25px; 
-      background: linear-gradient(135deg, #e0f2f7 0%, #ffffff 100%); /* Halka gradient background */
+      background: linear-gradient(135deg, #e0f2f7 0%, #ffffff 100%); /* Light gradient background */
       color: #333;
       line-height: 1.6;
-      position: relative; /* Floating button positioning ke liye zaroori */
-      min-height: 100vh; /* Body ko poori height lene ke liye */
+      position: relative; /* Necessary for floating button positioning */
+      min-height: 100vh; /* Make body take full height */
     }
     h1 { 
       text-align: center; 
-      color: #1a5276; /* Headings ke liye gehra neela */
+      color: #1a5276; /* Dark blue for headings */
       margin-bottom: 30px;
       font-size: 2.5em;
       font-weight: 700;
@@ -32,18 +32,18 @@
     #timer { 
       font-size: 2.2em; 
       font-weight: 700; 
-      color: #c0392b; /* Urgency ke liye laal */
+      color: #c0392b; /* Red for urgency */
       text-align: center; 
       margin-bottom: 35px; 
       background: #ffffff;
       padding: 15px 20px;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      border: 2px solid #3498db; /* Neela border */
+      border: 2px solid #3498db; /* Blue border */
       position: sticky;
       top: 10px;
       z-index: 1000;
-      animation: pulse 1.5s infinite alternate; /* Halki pulse animation */
+      animation: pulse 1.5s infinite alternate; /* Gentle pulse animation */
     }
 
     @keyframes pulse {
@@ -58,7 +58,7 @@
       right: 25px;
       width: 60px;
       height: 60px;
-      background: linear-gradient(45deg, #3498db, #2980b9); /* Neela gradient */
+      background: linear-gradient(45deg, #3498db, #2980b9); /* Blue gradient */
       color: #fff;
       border: none;
       border-radius: 50%;
@@ -69,7 +69,7 @@
       cursor: pointer;
       box-shadow: 0 8px 16px rgba(0,0,0,0.25);
       transition: all 0.3s ease;
-      z-index: 1001; /* Doosre content ke upar */
+      z-index: 1001; /* Above other content */
     }
     #open-nav-btn:hover {
       transform: translateY(-3px);
@@ -77,30 +77,30 @@
     }
 
     /* Navigation Modal Overlay */
-    .modal-overlay { /* Sabhi modals ke liye common class */
-      display: none; /* Corrected: Shuruat mein hidden */
+    .modal-overlay { /* Common class for all modals */
+      display: none; /* Corrected: Hidden initially */
       position: fixed;
-      z-index: 1002; /* FAB ke upar */
+      z-index: 1002; /* Above FAB */
       left: 0;
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto; /* Agar content overflow ho to scrolling enable karein */
+      overflow: auto; /* Enable scrolling if content overflows */
       background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
       backdrop-filter: blur(5px); /* Blurred background */
       -webkit-backdrop-filter: blur(5px); /* Safari support */
-      align-items: center; /* Content ko center mein karne ke liye */
-      justify-content: center; /* Content ko center mein karne ke liye */
+      align-items: center; /* To center content */
+      justify-content: center; /* To center content */
     }
 
     /* Modal Content Box */
-    .modal-content { /* Sabhi modal content ke liye common class */
+    .modal-content { /* Common class for all modal content */
       background-color: #fefefe;
-      margin: 15% auto; /* 15% upar se aur center mein */
+      margin: 15% auto; /* 15% from top and centered */
       padding: 30px;
       border: 1px solid #888;
       width: 90%; /* Responsive width */
-      max-width: 700px; /* Badi screens ke liye maximum width */
+      max-width: 700px; /* Maximum width for larger screens */
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       position: relative;
@@ -125,7 +125,7 @@
     }
     .close-btn:hover,
     .close-btn:focus {
-      color: #c0392b; /* Hover par laal */
+      color: #c0392b; /* Red on hover */
       text-decoration: none;
       cursor: pointer;
     }
@@ -135,25 +135,25 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px; /* Behtar touch targets ke liye zyada space */
-      padding: 10px 0; /* Modal content ke andar padding */
-      max-height: 60vh; /* Scrolling ke liye height limit karein */
-      overflow-y: auto; /* Bahut saare questions ke liye scrolling enable karein */
+      gap: 10px; /* More space for better touch targets */
+      padding: 10px 0; /* Padding inside modal content */
+      max-height: 60vh; /* Limit height for scrolling */
+      overflow-y: auto; /* Enable scrolling for many questions */
       border-radius: 8px;
-      background-color: #eef7fc; /* Nav ke liye halka background */
+      background-color: #eef7fc; /* Light background for navigation */
       padding: 20px;
     }
     .nav-item {
-      width: 45px; /* Behtar touch ke liye bade circles */
-      height: 45px; /* Behtar touch ke liye bade circles */
+      width: 45px; /* Larger circles for better touch */
+      height: 45px; /* Larger circles for better touch */
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #e0e0e0; /* Unattempted ke liye default grey */
+      background-color: #e0e0e0; /* Default grey for unattempted */
       color: #555;
       border-radius: 50%; /* Circular shape */
       font-weight: 600;
-      font-size: 1.1em; /* Bada font size */
+      font-size: 1.1em; /* Larger font size */
       cursor: pointer;
       transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -163,18 +163,18 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     }
     .nav-item-attempted {
-      background-color: #28a745; /* Attempted ke liye hara */
+      background-color: #28a745; /* Green for attempted */
       color: #fff;
     }
     .nav-item-unattempted {
-      background-color: #e0e0e0; /* Unattempted ke liye grey */
+      background-color: #e0e0e0; /* Grey for unattempted */
       color: #555;
     }
 
     /* Section Heading Styling */
     .section-heading {
-      background: linear-gradient(45deg, #28a745 0%, #218838 100%); /* Hara gradient */
-      border-left: 8px solid #1abc9c; /* Halka hara accent */
+      background: linear-gradient(45deg, #28a745 0%, #218838 100%); /* Green gradient */
+      border-left: 8px solid #1abc9c; /* Light green accent */
       padding: 18px 25px;
       font-size: 1.8em;
       margin-top: 45px;
@@ -191,7 +191,7 @@
       background: #ffffff; 
       padding: 25px; 
       margin: 20px 0; 
-      border-left: 6px solid #5dade2; /* Halka neela accent */
+      border-left: 6px solid #5dade2; /* Light blue accent */
       border-radius: 12px; 
       box-shadow: 0 6px 12px rgba(0,0,0,0.08);
       transition: transform 0.2s ease-in-out;
@@ -216,39 +216,39 @@
 
     /* Radio Option Styling */
     label { 
-      display: flex; /* Alignment ke liye flexbox ka upyog karein */
+      display: flex; /* Use flexbox for alignment */
       align-items: center;
       margin: 10px 0; 
       padding: 15px;
-      background: #f8fcfd; /* Bahut halka neela background */
-      border: 1px solid #d4e6f1; /* Halki border */
+      background: #f8fcfd; /* Very light blue background */
+      border: 1px solid #d4e6f1; /* Light border */
       border-radius: 8px;
       cursor: pointer;
       transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
       font-size: 1.05em;
     }
     label:hover {
-      background: #eaf7fb; /* Hover par halka neela */
+      background: #eaf7fb; /* Light blue on hover */
       border-color: #aed6f1;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
     input[type="radio"] {
       margin-right: 15px;
-      transform: scale(1.2); /* Thode bade radio buttons */
-      accent-color: #3498db; /* Radio button ke liye neela accent */
+      transform: scale(1.2); /* Slightly larger radio buttons */
+      accent-color: #3498db; /* Blue accent for radio button */
     }
     label input[type="radio"]:checked + span {
       font-weight: 600;
-      color: #28a745; /* Selected option text ke liye hara rang */
+      color: #28a745; /* Green color for selected option text */
     }
-    /* Selected option ke liye visual feedback */
+    /* Visual feedback for selected option */
     label input[type="radio"]:checked {
-        border: 2px solid #28a745; /* Selected radio ke charo or hara border */
-        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Hara glow */
+        border: 2px solid #28a745; /* Green border around selected radio */
+        box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Green glow */
     }
-    label.selected-option { /* Jab select kiya jaye to label mein class add karein */
-        background-color: #d4edda; /* Halka hara background */
-        border-color: #28a745; /* Hara border */
+    label.selected-option { /* Add class to label when selected */
+        background-color: #d4edda; /* Light green background */
+        border-color: #28a745; /* Green border */
         box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
     }
 
@@ -257,12 +257,12 @@
     #submitBtn { 
       display: block;
       width: 100%;
-      max-width: 300px; /* Behtar appearance ke liye maximum width */
-      margin: 40px auto 20px; /* Button ko center mein karein */
+      max-width: 300px; /* Maximum width for better appearance */
+      margin: 40px auto 20px; /* Center the button */
       padding: 18px; 
       font-size: 1.4em;
       font-weight: 700;
-      background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%); /* Hara gradient button */
+      background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%); /* Green gradient button */
       color: #fff; 
       border: none; 
       border-radius: 10px; 
@@ -273,7 +273,7 @@
       letter-spacing: 0.05em;
     }
     #submitBtn:hover {
-        background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%); /* Hover par reverse gradient */
+        background: linear-gradient(90deg, #2ecc71 0%, #27ae60 100%); /* Reverse gradient on hover */
         transform: translateY(-2px);
         box-shadow: 0 8px 16px rgba(0,0,0,0.25);
     }
@@ -378,7 +378,7 @@
       padding: 18px 40px;
       font-size: 1.6em;
       font-weight: 700;
-      background: linear-gradient(90deg, #3498db 0%, #2980b9 100%); /* Neela gradient button */
+      background: linear-gradient(90deg, #3498db 0%, #2980b9 100%); /* Blue gradient button */
       color: #fff;
       border: none;
       border-radius: 12px;
@@ -396,19 +396,19 @@
 
     /* Time's Up Notification Modal */
     #time-up-modal {
-      z-index: 1003; /* Doosre modals se upar */
+      z-index: 1003; /* Above other modals */
     }
 
     #time-up-modal-content {
-      border: 3px solid #e74c3c; /* Urgency ke liye laal border */
+      border: 3px solid #e74c3c; /* Red border for urgency */
     }
 
     #time-up-modal-content h2 {
-      color: #e74c3c; /* Laal heading */
+      color: #e74c3c; /* Red heading */
     }
 
     #time-up-modal-content button {
-      background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%); /* Laal gradient button */
+      background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%); /* Red gradient button */
     }
 
     #time-up-modal-content button:hover {
@@ -417,7 +417,7 @@
 
     /* Submission Confirmation Modal */
     #confirm-submit-modal {
-        z-index: 1004; /* Aur bhi upar z-index */
+        z-index: 1004; /* Even higher z-index */
     }
     #confirm-submit-modal-content {
         max-width: 450px;
@@ -426,7 +426,7 @@
         border-radius: 15px;
         box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         text-align: center;
-        border: 2px solid #f39c12; /* Warning ke liye orange border */
+        border: 2px solid #f39c12; /* Orange border for warning */
     }
     #confirm-submit-modal-content h2 {
         color: #f39c12; /* Orange heading */
@@ -454,7 +454,7 @@
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     #confirm-submit-btn {
-        background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%); /* Confirm ke liye hara */
+        background: linear-gradient(90deg, #27ae60 0%, #2ecc71 100%); /* Green for confirm */
         color: #fff;
     }
     #confirm-submit-btn:hover {
@@ -462,7 +462,7 @@
         transform: translateY(-2px);
     }
     #cancel-submit-btn {
-        background: #e0e0e0; /* Cancel ke liye grey */
+        background: #e0e0e0; /* Grey for cancel */
         color: #555;
     }
     #cancel-submit-btn:hover {
@@ -482,7 +482,7 @@
     #progress-bar {
       height: 25px;
       width: 0%;
-      background-color: #28a745; /* Hara progress */
+      background-color: #28a745; /* Green progress */
       border-radius: 10px;
       text-align: center;
       line-height: 25px;
@@ -514,7 +514,8 @@
   </div>
 
   <div id="quiz-content-wrapper" style="display: none;">
-    <div id="timer">Time Left: 02:00:00</div>
+    <!-- Timer Display. Initial display will be "01:30:00" for 90 minutes -->
+    <div id="timer">Time Left: 01:30:00</div>
 
     <div id="progress-container">
       <div id="progress-bar"></div>
@@ -1186,7 +1187,9 @@
           </div>
       </div>
     </div>
-  </div> <div id="time-up-modal" class="modal-overlay">
+  </div> 
+  
+  <div id="time-up-modal" class="modal-overlay">
     <div id="time-up-modal-content" class="modal-content">
       <h2>⏰ Time's Up! ⏰</h2>
       <p>Your time has expired. Your test has been automatically submitted.</p>
@@ -1233,7 +1236,7 @@
     };
 
     const totalQuestions = 90;
-    let timeLeft = 7200; // 2 hours in seconds (7200 seconds = 2 * 60 * 60)
+    let timeLeft = 5400; // 90 minutes in seconds (90 * 60 = 5400 seconds)
     let timerInterval; // Declare timerInterval globally
     let submitted = false; // Flag to check if quiz is already submitted
 
@@ -1375,19 +1378,19 @@
 
     // Event listener for the Start button
     startButton.addEventListener('click', () => {
-      introScreen.style.display = 'none'; // Intro screen ko hide karein
-      quizContentWrapper.style.display = 'block'; // Main quiz content ko show karein
-      startTimer(); // Timer shuru karein
-      initializeQuizNavigation(); // Question navigation ko initialize karein
+      introScreen.style.display = 'none'; // Hide intro screen
+      quizContentWrapper.style.display = 'block'; // Show main quiz content
+      startTimer(); // Start the timer
+      initializeQuizNavigation(); // Initialize question navigation
     });
 
     // Event listeners for main navigation modal
     openNavBtn.addEventListener('click', () => {
-      navModal.style.display = 'flex'; // Modal show karein
+      navModal.style.display = 'flex'; // Show modal
     });
 
     closeNavBtn.addEventListener('click', () => {
-      navModal.style.display = 'none'; // Modal hide karein
+      navModal.style.display = 'none'; // Hide modal
     });
 
     // Close main navigation modal if user clicks outside of it
@@ -1399,32 +1402,32 @@
 
     // Event listener for closing the "Time's Up" modal
     closeTimeUpModalBtn.addEventListener('click', () => {
-      timeUpModal.style.display = 'none'; // Time-up modal hide karein
+      timeUpModal.style.display = 'none'; // Hide time-up modal
     });
 
     // Event listener for Submit Quiz button (opens confirmation modal)
     submitBtn.addEventListener('click', () => {
-        confirmSubmitModal.style.display = 'flex'; // Confirmation modal show karein
+        confirmSubmitModal.style.display = 'flex'; // Show confirmation modal
     });
 
     // Event listener for "Confirm Submit" button in confirmation modal
     confirmSubmitBtn.addEventListener('click', () => {
-        confirmSubmitModal.style.display = 'none'; // Confirmation modal hide karein
-        submitQuiz(); // Quiz submission ke saath aage badhein
+        confirmSubmitModal.style.display = 'none'; // Hide confirmation modal
+        submitQuiz(); // Proceed with quiz submission
     });
 
     // Event listener for "Cancel Submit" button in confirmation modal
     cancelSubmitBtn.addEventListener('click', () => {
-        confirmSubmitModal.style.display = 'none'; // Confirmation modal hide karein
+        confirmSubmitModal.style.display = 'none'; // Hide confirmation modal
     });
 
 
     // Function to calculate score and show results
     function submitQuiz() {
-      if (submitted) return; // Multiple submissions ko rokein
+      if (submitted) return; // Prevent multiple submissions
       submitted = true;
 
-      clearInterval(timerInterval); // Timer rokein
+      clearInterval(timerInterval); // Stop the timer
       const form = document.getElementById("quizForm");
       let totalScore = 0;
       const result = {};
@@ -1442,14 +1445,14 @@
             unattempted++;
           } else if (selected.value === correctAnswers[q]) {
             correct++;
-            sectionScore += 1; // Correct answer ke liye +1
+            sectionScore += 1; // +1 for correct answer
           } else {
             incorrect++;
-            sectionScore -= 0.33; // Incorrect answer ke liye -0.33
+            sectionScore -= 0.33; // -0.33 for incorrect answer
           }
         });
         
-        totalScore += sectionScore; // Section score ko overall total mein add karein
+        totalScore += sectionScore; // Add section score to overall total
         result[section] = {
           correct, 
           incorrect, 
@@ -1458,23 +1461,23 @@
         };
       }
 
-      // Submission ke baad sabhi radio inputs ko disable karein taaki further changes na ho sakein
+      // After submission, disable all radio inputs to prevent further changes
       const allInputs = form.querySelectorAll('input[type="radio"]');
       allInputs.forEach(input => {
         input.disabled = true;
-        // Behtar UX ke liye labels ko bhi disabled dikhayein
+        // Also show labels as disabled for better UX
         input.parentElement.style.cursor = "not-allowed";
         input.parentElement.style.backgroundColor = "#f2f2f2";
-        input.parentElement.classList.remove('selected-option'); // Highlight hatayein
+        input.parentElement.classList.remove('selected-option'); // Remove highlight
       });
 
-      // Submit button aur navigation button ko disable karein
+      // Disable submit button and navigation button
       submitBtn.disabled = true;
-      openNavBtn.disabled = true; // Nav button ko bhi disable karein
+      openNavBtn.disabled = true; // Disable nav button as well
       openNavBtn.style.cursor = "not-allowed";
       openNavBtn.style.opacity = "0.6";
 
-      // Results ko ek nayi window mein show karein asani se dekhne aur print karne ke liye
+      // Show results in a new window for easy viewing and printing
       const newWin = window.open("", "_blank");
       newWin.document.write(`
         <html>
